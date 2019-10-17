@@ -11,16 +11,10 @@ struct Complex {
 
 	Complex();
 	Complex(double, double);
-	bool testParse(const string&);
-	Complex operator-(const Complex& a){
-	    Complex neo(a.Re-this->Re,this->Im-a.Im);
+	static bool testParse(const string&);
+	void operator+=(double a){
+	    this->Re+=a;
 	}
-    Complex operator*(const Complex& a){
-        Complex neo(a.Re*this->Re,this->Im*a.Im);
-    }
-    Complex operator/(const Complex& a){
-        Complex neo(a.Re/this->Re,this->Im/a.Im);
-    }
 	friend ostream& operator<< (ostream& out, Complex& a) {
 		if (a.Im > 0) {
 			out << a.Re << " + " << a.Im << "i" << endl;
@@ -50,15 +44,17 @@ Complex::Complex() {
 	Re = 0;
 	Im = 0;
 }
-
 Complex::Complex(double a, double b) {
 	Re = a;
 	Im = b;
 }
-
-Complex operator+ (const Complex& a, const Complex& b) {
+Complex operator+(const Complex& a, const Complex& b) {
 	Complex neo(a.Re + b.Re, b.Im + a.Im);
 	return neo;
+}
+Complex operator+(const Complex& a,const double b){
+    Complex neo(a.Re+b, a.Im);
+    return neo;
 }
 Complex operator-(const Complex& a,const Complex& b){
     Complex neo(a.Re-b.Re,b.Im-a.Im);

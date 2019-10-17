@@ -8,9 +8,17 @@ int main() {
 	cin >> g>>h;
 	Complex neo = g*h;
 	cout << neo;*/
-Rational r(80,35);
-r.simplify();
-cout<<r;
+    /*Rational r(8,18);
+    Rational s(1,3);
+    Rational neo = r+s;
+    cout<<neo;*/
+
+
+cout<< Complex::testParse("{3.6,4}");
+
+
+
+
 	system("pause");
 	return 0;
 }
