@@ -14,8 +14,10 @@ int main() {
     cout<<neo;*/
 
 
-cout<< Complex::testParse("{3.6,4}");
-
+Rational g(1,5);
+Rational f(3,6);
+f/=2;
+cout<<f;
 
 
 
